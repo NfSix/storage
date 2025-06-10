@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="UTF-8">
+<title>Добавить товар</title>
+<header th:replace="index::head"></header>
+
+<body>
+<blockquote class="blockquote text-center"><h1>Добавление товара</h1></blockquote>
+<div class="row">
+    <div class="col-md-8 offset-md-4">
+        <form action="#" th:action="@{/save}" th:object="${storage}" method="post">
+            <table>
+                <tr>
+                    <td>Название товара:</td>
+                    <td>
+                        <label>
+                            <input type="text" th:field="*{title}" />
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Группа техники:</td>
+                    <td>
+                        <label>
+                            <input type="text" th:field="*{type}" />
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Дата поступления:</td>
+                    <td>
+                        <label>
+                            <input type="date" th:field="*{importdate}" />
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Дата отгрузки:</td>
+                    <td>
+                        <label>
+                            <input type="date" th:field="*{exportdate}" />
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ФИО водителя:</td>
+                    <td>
+                        <label>
+                            <input type="text" th:field="*{driver}" />
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
